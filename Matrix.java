@@ -6,6 +6,7 @@ import java.util.Random;
 public class Matrix {
     private double[][] table;
     private int size;
+    double[] matrixArray;
 
     public Matrix(int n) {
         this.size = n;
@@ -35,6 +36,22 @@ public class Matrix {
     public double[][] getTable(){
         return table;
     }
+
+    public void setMatrixToArray(){
+        matrixArray = new double[this.size*this.size];
+        int k = 0;
+        for (int i = 0; i < this.size; i++) {
+            for (int j = 0; j < this.size; j++) {
+                matrixArray[k] = table[i][j];
+                k++;
+            }
+        }
+    }
+
+    public double getElementFromArray(int i, int j){
+        return matrixArray[j+i*size];
+    }
+
 }
 
 
